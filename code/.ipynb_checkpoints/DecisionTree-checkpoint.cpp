@@ -64,6 +64,7 @@ int predict_outcome(decision_node* cursor, student_profile student){
 
 
 
+//Ignore below:
 
 //travers a decision tree to land on a outcome
 //int predict_outcome(decision_node* cursor, student_profile student){

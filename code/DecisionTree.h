@@ -27,32 +27,27 @@ struct decision_node{
     int no_outcome;
 };
 
+    
+  //init a decision node
+    decision_node* init_node(int yes, int no);
+     
+    student_profile init_profile(float gpa, int test_score, int match_score, bool funding, bool motiv, bool recom);  
+    
+    int predict_outcome(decision_node* cursor, student_profile student);
+
+
+
+#endif //DECISION_TREE_H__
+
+
+
+//Ignore below:
 
 //class Decision_Tree {
 //public:
 //  Decision_Tree();
 //  ~Decision_Tree();
       
-    
-  //init a decision node
-    decision_node* init_node(int yes, int no);
-     
-    student_profile init_profile(float gpa, int test_score, int match_score, bool funding, bool motiv, bool recom);  
-    int predict_outcome(decision_node* cursor, student_profile student);
-
-
-    decision_node* get_root();
-    
-    int get_node_count();
-  
-    void set_node_count(int count);
-
-    void set_root(decision_node** new_root);
-
-
-#endif //DECISION_TREE_H__
-
-
 //private:
 //  decision_node** root;
 //  string decision_outcome;
@@ -83,3 +78,10 @@ struct decision_node{
     
   //decision_node* buddy_parent(decision_node* remover);
 
+//    decision_node* get_root();
+    
+//    int get_node_count();
+  
+//    void set_node_count(int count);
+
+//    void set_root(decision_node** new_root);
