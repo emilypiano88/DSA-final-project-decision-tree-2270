@@ -29,10 +29,6 @@ int predict_admission(student_profile student){
     return outcome; //1 = admitted, 2 = waitlisted, 3 = not admitted
 }
 
-//void decision_function(string func_name, student_profile Bob){
-//    func_name(Bob);
-//}
-
 
 //=+=+=+=+=+=+=+=+=+=+=+=+=+=+   tree-based decisioning  =+=+=+=+=+=+=+=+=+=+=+=+=+=+//
 
@@ -84,7 +80,7 @@ int main() {
     Bob.pos_recomend = 0;
     
     //parameter order: gpa, test_score, match_score, funding, motiv, recom
-    student_profile Alice = init_profile(3.2, 700, 8, 0, 0, 0); 
+    student_profile Alice = init_profile(3.2, 700, 8, 0, 1, 0); 
     
 
     
@@ -147,6 +143,11 @@ int main() {
 }
 
 
+
+//Ignore Below
+//void decision_function(string func_name, student_profile Bob){
+//    func_name(Bob);
+//}
 
 
     //Decision_Tree Admission_Tree;    
