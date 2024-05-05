@@ -1,5 +1,5 @@
-#ifndef BTREE_H__
-#define BTREE_H__
+#ifndef DECISION_TREE_H__
+#define DECISION_TREE_H__
 
 #include <memory>
 #include <string>
@@ -8,79 +8,78 @@
 
 using namespace std;
 
+
+struct student_profile{
+    float underg_gpa; //underg_gpa range 2.5 to 4.0
+    int stand_test;  //stand_test range 300 to 800
+    int backgd_match; //backgd_match score on scale of 10
+    bool self_funding;  //has their own source of funding
+    bool strong_motiv; //strong motivation
+    bool pos_recomend; //positive letter of recomendation
+};
+
 struct decision_node{
-    string decision_function;//outcome nodes do not have decision function
-    bool decision;//decision outcome
-    bool is_outcome; //leaf nodes are decision outcome
-    decision_tree* yes;
-    decision_tree* no;    
+    bool is_leaf;
+    bool (*func_name)(student_profile);
+    decision_node* yes_node;
+    decision_node* no_node;
+    int outcome_yes;
+    int outcome_no;
 };
 
-struct decision_tree{
-    int node_count;
-    vector<*decision_node>
+
+//class Decision_Tree {
+//public:
+//  Decision_Tree();
+//  ~Decision_Tree();
+      
     
-};
-
-bool (*decision_func)(string);
-bool dec_func_1(string key);
-bool dec_func_2(string key);
-bool dec_func_3(string key);
-
+  //init a decision node
+    decision_node* init_node();
+     
+      
+    int predict_outcome(decision_node* cursor, student_profile student);
 
 
-//----------------Helper Functions-----------------//
+    decision_node* get_root();
+    
+    int get_node_count();
+  
+    void set_node_count(int count);
 
-btree* init_node_helper();
-
-btree* build_node_helper(int size, int* keys);
-
-btree* build_semifull_helper();
-
-btree* build_full_leaf_root_helper();
-
-btree* build_small_helper();
+    void set_root(decision_node** new_root);
 
 
-//---------------End of Helper Functions-----------//
+#endif //DECISION_TREE_H__
+
+
+//private:
+//  decision_node** root;
+//  string decision_outcome;
+//  int count_of_node;
+//};
 
 
 
-// insert adds the given key into a b-tree rooted at 'root'.  If the
-// key is already contained in the btree this should do nothing.
-//
-// On exit:
-// -- the 'root' pointer should refer to the root of the tree. (the root may
-//    change when we insert or remove - that is why it is a reference parameter)
-// -- the btree pointed to by 'root' is valid.
+//  void report(decision_node* top);
 
 
-void insert(btree*& root, int key);
+//void insert(decision_node* new_node);
 
-// remove deletes the given key from a b-tree rooted at 'root'. If the key is
-// not in the btree this should do nothing.
-//
-// On exit:
-// -- the 'root' pointer should refer to the root of the tree. (the root may
-//    change when we insert or delete. Again it is a reference param so you can
-//    change the root node if it is necessary.)
-// -- the btree pointed to by 'root' is valid.
-void remove(btree*& root, int key);
+  //void insert_data(int data);
 
-// find locates the node that either: (a) currently contains this key, or (b)
-// the node that would contain it if we were to try to insert it.  Note that
-// this always returns a non-null node.
-btree* find(btree* root, int key);
+  //void remove(int data);
 
-// count_nodes returns the number of nodes referenced by this btree. If this
-// node is NULL, count_nodes returns zero; if it just a single root node with no
-// children, it returns 1; otherwise it returns 1 plus however many nodes are
-// accessable via any valid child links.
-int count_nodes(btree* root);
+  //bool contains(decision_node* subt, int data);
 
-// count_keys returns the total number of keys stored in this btree. If the root
-// node is null it returns zero; otherwise it returns the number of keys in the
-// root plus however many keys are contained in valid child links.
-int count_keys(btree* root);
+  //decision_node* get_node(decision_node* subt, int data);
 
-#endif // BTREE_H__
+  //int size(decision_node* subt);
+
+  //void to_vector(decision_node* subt, vector<int>& vec);
+
+  
+  //decision_node* buddy(decision_node* remover);
+    
+  //decision_node* buddy_parent(decision_node* remover);
+

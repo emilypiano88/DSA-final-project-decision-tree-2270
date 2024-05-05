@@ -3,6 +3,7 @@ Final project turn in for data structure and algorithm 2270
 
 ## Data structure implemented
 Decision Tree
+
 In this project, I will use a tree-based structure to implement some decision tree algorithm for some risk modeling and decisioning problems. A decision tree is a representation of a data structure that consists of nodes and edges. 
 
 ## Explanation of the data structure
