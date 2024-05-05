@@ -12,19 +12,19 @@ using namespace std;
 struct student_profile{
     float underg_gpa; //underg_gpa range 2.5 to 4.0
     int stand_test;  //stand_test range 300 to 800
-    int backgd_match; //backgd_match score on scale of 10
+    int match_score; //backgd_match score on scale of 10
     bool self_funding;  //has their own source of funding
     bool strong_motiv; //strong motivation
     bool pos_recomend; //positive letter of recomendation
 };
 
 struct decision_node{
-    bool is_leaf;
+    //bool is_leaf;
     bool (*func_name)(student_profile);
     decision_node* yes_node;
     decision_node* no_node;
-    int outcome_yes;
-    int outcome_no;
+    int yes_outcome;
+    int no_outcome;
 };
 
 
@@ -35,9 +35,9 @@ struct decision_node{
       
     
   //init a decision node
-    decision_node* init_node();
+    decision_node* init_node(int yes, int no);
      
-      
+    student_profile init_profile(float gpa, int test_score, int match_score, bool funding, bool motiv, bool recom);  
     int predict_outcome(decision_node* cursor, student_profile student);
 
 
