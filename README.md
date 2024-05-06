@@ -47,7 +47,10 @@ Google Drive Folder:
 https://drive.google.com/drive/folders/1_ui7JMktaVGipA9GgJf7BZzdS1wwa3jA?usp=drive_link
 
 ### Part 2
-An obvious drawback in part 1 is that the decision tree was constructed by hand. In part 2, I'm examine decision tree as an machine learning algothm. First, I prepared some training set with manual labels:
+An obvious drawback in part 1 is that the decision tree was constructed by hand. There's no guarentee that it resembles the actuall decision making process admissions committee adopts.
+
+To solve this problem, in part 2, I'll examine decision tree as a machine learning algothm in which I will learn from previous applicants' admissions data to train a decision tree and make predictions for new applicants.   
+First, I prepared some training set with manual labels of 15 students (assuming they're real admissions outcome):
 ![image](https://github.com/emilypiano88/DSA-final-project-decision-tree-2270/assets/157334954/976f7b81-35f0-4310-a5c5-c62521ed4762)
 
 
