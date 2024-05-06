@@ -1,21 +1,6 @@
 #include "DecisionTree.h"
 
 
-//init a decision node
-//Decision_Tree::Decision_Tree() {
-//  root = new decision_node*;
-//  *root = NULL;
-//}
-
-//Decision_Tree::~Decision_Tree() {}
-
-//int Decision_Tree::get_node_count(){
-//  return count_of_node;
-//}
-
-//void Decision_Tree::set_node_count(int count){
-//   count_of_node = count;
-//}
 
 student_profile init_profile(float gpa, int test_score, int match_score, bool funding, bool motiv, bool recom){
     student_profile student = *(new student_profile);
@@ -64,8 +49,58 @@ int predict_outcome(decision_node* cursor, student_profile student){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Ignore below:
 
+
+
+//init a decision node
+//Decision_Tree::Decision_Tree() {
+//  root = new decision_node*;
+//  *root = NULL;
+//}
+
+//Decision_Tree::~Decision_Tree() {}
+
+//int Decision_Tree::get_node_count(){
+//  return count_of_node;
+//}
+
+//void Decision_Tree::set_node_count(int count){
+//   count_of_node = count;
+//}
 //travers a decision tree to land on a outcome
 //int predict_outcome(decision_node* cursor, student_profile student){
 //    if (cursor->func_name(student) == true){
